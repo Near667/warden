@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands, tasks
 from discord import app_commands
 import asyncio
+import os
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -96,4 +97,4 @@ async def on_command_error(ctx, error):
     else:
         raise error  # Raise unhandled errors
 # Start the bot (don't forget to replace this with your real token)
-bot.run("MTM1ODYwNDI5OTc1MTUyMjQ3Nw.GJOwIy.h9Ok8y5Zlqv1QkvDMKXRhQohzqb0mG9nwtF1M4")
+bot.run(os.getenv("DISCORD_TOKEN"))
